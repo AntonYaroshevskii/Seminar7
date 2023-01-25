@@ -49,52 +49,61 @@
 
 //Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
-Console.Write("Введите количество строк: ");
-int rows = int.Parse(Console.ReadLine()!);
-Console.Write("Введите количество столбцов: ");
-int columns = int.Parse(Console.ReadLine()!);
-int[,] array = GetArray(rows, columns, 0, 10);
-PrintArray(array);
-double[] result = ArithmeticMean(array);
-Console.WriteLine($"{result}");
-
-// -------------Метод----------------------------
-int[,] GetArray(int m, int n, int minValue, int maxValue){
-    int[,] result = new int[m,n];
-    for(int i = 0; i < m; i++){
-        for(int j = 0; j < n; j++){
-            result[i,j] = new Random().Next(minValue, maxValue + 1);
-        }
-    }
-    return result;
-}
-
-void PrintArray(int[,] array){
-    for(int i = 0; i < array.GetLength(0); i++){
-        for(int j = 0; j < array.GetLength(1); j++){
-            Console.Write($"{array[i,j]} ");
-        }
-        Console.WriteLine();
-    }
-}
+// Console.Write("Введите количество строк: ");
+// int rows = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите количество столбцов: ");
+// int columns = int.Parse(Console.ReadLine()!);
+// int[,] array = GetArray(rows, columns, 0, 10);
+// PrintArray(array);
+// double[] result = ArithmeticMean(array);
+// PrintArrayResult(result);
 
 
-bool findNum(int[,] array, int a){ 
-    foreach (int el in array){ 
-    if(el == a){ 
-        return true; 
-    } 
-} 
-return false;
-}
+// // -------------Метод----------------------------
+// int[,] GetArray(int m, int n, int minValue, int maxValue){
+//     int[,] result = new int[m,n];
+//     for(int i = 0; i < m; i++){
+//         for(int j = 0; j < n; j++){
+//             result[i,j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return result;
+// }
 
-double[] ArithmeticMean(int[,] array){
-    double[] result = new double[array.GetLength(1)];
-    int colums = array.GetLength(1);
-    for(int i = 0; i < array.GetLength(0); i++){
-        for(int j = 0; j < array.GetLength(1); j++){
-            result[i] = array[i,j] + array[i+1,j] + array[i+2,j] / colums;
-        }
-    }
-    return result;
-}
+// void PrintArray(int[,] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//         for(int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+// bool findNum(int[,] array, int a){ 
+//     foreach (int el in array){ 
+//     if(el == a){ 
+//         return true; 
+//     } 
+// } 
+// return false;
+// }
+
+// double[] ArithmeticMean(int[,] array){
+//     double[] result = new double[array.GetLength(1)];
+//     double sum;   
+//     for(int i = 0; i < array.GetLength(1); i++){
+//         sum = 0;
+//         for(int j = 0; j < array.GetLength(0); j++){
+//             sum += array[j,i];
+//         }
+//         result[i] = sum / array.GetLength(0);
+//     }
+//     return result;
+// }
+// void PrintArrayResult(double[] array){
+//     for(int i = 0; i < array.GetLength(0); i++){
+//             Console.Write($"{array[i]:F1} ");
+//         }
+//         Console.WriteLine();
+// }
